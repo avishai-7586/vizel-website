@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ויזל מיסוי ותכנון פיננסי | מומחה מס ותכנון פיננסי</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a2947;
+            --primary-light: #2d4263;
+            --accent: #c9a961;
+            --accent-dark: #b89550;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-cream: #faf8f5;
+            --white: #ffffff;
+            --shadow: rgba(26, 41, 71, 0.08);
+            --shadow-lg: rgba(26, 41, 71, 0.15);
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1.05em;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 4.5em;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(201, 169, 97, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .decorative-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .shape-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--accent);
+            top: -200px;
+            left: -200px;
+        }
+
+        .shape-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            bottom: -100px;
+            left: 50%;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 40px;
+            background: var(--bg-cream);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 3em;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2em;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.2);
+        }
+
+        .service-card h3 {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 1.8em;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        /* Alternative Investments Section */
+        .investments {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .investments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .investment-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 8px 30px var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .investment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .investment-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.85em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+
+        .investment-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+        }
+
+        .icon-green {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .icon-blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .icon-purple {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .investment-card h3 {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 2em;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .investment-card > p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .investment-features {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .investment-features h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .investment-features ul {
+            list-style: none;
+            padding: 0;
+            color: var(--text-light);
+        }
+
+        .investment-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkmark {
+            font-size: 1.2em;
+        }
+
+        .checkmark-green { color: #10b981; }
+        .checkmark-blue { color: #3b82f6; }
+        .checkmark-purple { color: #8b5cf6; }
+
+        .investment-cta {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 20px;
+            padding: 60px 50px;
+            text-align: center;
+            color: var(--white);
+            box-shadow: 0 8px 30px var(--shadow-lg);
+        }
+
+        .investment-cta h3 {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .investment-cta p {
+            font-size: 1.3em;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .investment-cta .btn {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 18px 50px;
+            font-size: 1.2em;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(201, 169, 97, 0.4);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 120px 40px;
+            background: var(--bg-cream);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .pricing-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pricing-card.featured {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+
+        .pricing-card.featured::before {
+            transform: scaleX(1);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px var(--shadow-lg);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-8px) scale(1.05);
+        }
+
+        .pricing-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card h3 {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .pricing-card.featured h3 {
+            color: var(--white);
+        }
+
+        .price {
+            font-size: 3.5em;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 25px 0;
+            font-family: 'Frank Ruhl Libre', serif;
+        }
+
+        .pricing-card.featured .price {
+            color: var(--accent);
+        }
+
+        .price-currency {
+            font-size: 0.5em;
+            font-weight: 600;
+        }
+
+        .price-period {
+            font-size: 0.35em;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .pricing-card.featured .price-period {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+            padding: 0;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: var(--text-light);
+            font-size: 1.05em;
+        }
+
+        .pricing-card.featured .pricing-features li {
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 40px;
+            background: var(--white);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: var(--bg-cream);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            font-size: 1.05em;
+            font-family: 'Assistant', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Assistant', sans-serif;
+        }
+
+        .form-submit:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-lg);
+        }
+
+        .contact-info {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--bg-cream);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .contact-item-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5em;
+        }
+
+        .contact-item h4 {
+            font-size: 1.2em;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+            font-size: 1.05em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 40px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            font-size: 1.05em;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.05em;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 30px 0;
+        }
+
+        .footer-bottom {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95em;
+        }
+
+        .success-message {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 40px;
+                gap: 20px;
+                transition: right 0.3s ease;
+                box-shadow: 0 4px 20px var(--shadow);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+
+            .services-grid,
+            .investments-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 40px 30px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-8px) scale(1);
+            }
+
+            .investment-cta {
+                padding: 40px 30px;
+            }
+
+            .investment-cta h3 {
+                font-size: 2em;
+            }
+
+            .investment-cta p {
+                font-size: 1.1em;
+            }
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">ויזל מיסוי ותכנון פיננסי</div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">דף הבית</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#investments">השקעות</a></li>
+                <li><a href="#pricing">מחירון</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="decorative-shape shape-1"></div>
+        <div class="decorative-shape shape-2"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>מומחה מס<br>ותכנון פיננסי</h1>
+                <p class="hero-subtitle">עם 8.5 שנות ניסיון ברשות המיסים ורישיון סוכן ביטוח, אני מספק פתרונות מיסוי ותכנון פיננסי מקיפים שיחסכו לכם כסף ויבטיחו עתיד כלכלי מאובטח.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">פנה אלינו עכשיו</a>
+                    <a href="#services" class="btn btn-secondary">למד עוד</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services fade-in-section" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">השירותים שלנו</span>
+                <h2 class="section-title">שירותי מיסוי ותכנון פיננסי מקיפים</h2>
+                <p class="section-description">שילוב ייחודי של מומחיות במיסוי, תכנון פיננסי ופנסיוני - הכל תחת קורת גג אחת</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>ייעוץ מס</h3>
+                    <p>ייעוץ מקצועי במיסוי לעצמאיים ולחברות. תכנון מס אופטימלי, ניצול מלא של כל הזכויות והפטורים המגיעים לכם. ניסיון של 8.5 שנים ברשות המיסים - אני מכיר את המערכת מבפנים.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>תכנון פיננסי</h3>
+                    <p>בניית תכנית פיננסית מקיפה המותאמת למטרות ולמצב האישי שלכם. ניהול תקציב, תכנון השקעות, והכנה לאירועי חיים משמעותיים - חתונה, רכישת דירה, לימודי ילדים ועוד.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏦</div>
+                    <h3>תכנון פנסיוני</h3>
+                    <p>הכנה מקיפה לפרישה - בדיקת זכויות פנסיוניות, אופטימיזציה של קרנות פנסיה וקופות גמל, תכנון הכנסה לגיל פרישה, וייעוץ לגבי מועד הפרישה האופטימלי.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>ביטוח וניהול סיכונים</h3>
+                    <p>כסוכן ביטוח מורשה, אני מספק ייעוץ מקצועי לבחירת פוליסות ביטוח מתאימות - ביטוח חיים, אובדן כושר עבודה, בריאות ופנסיה. הגנה מלאה על העתיד שלכם ושל המשפחה.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>ליווי שוטף</h3>
+                    <p>ליווי רציף ועדכון שוטף של התכנית הפיננסית בהתאם לשינויים בחיים ובשוק. מעקב אחר השקעות, עדכון תכנון מס, והתאמת אסטרטגיה פיננסית לצרכים המשתנים.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>תכנון פרישה מוקדמת</h3>
+                    <p>ייעוץ מיוחד לאנשים המעוניינים לפרוש מוקדם - חישוב כדאיות, תכנון הכנסות חלופיות, אופטימיזציה מיסויית של הפרישה, והכנה כלכלית מלאה לשלב החדש בחיים.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternative Investments Section -->
+    <section class="investments fade-in-section" id="investments">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">השקעות אלטרנטיביות</span>
+                <h2 class="section-title">הזדמנויות השקעה ייחודיות</h2>
+                <p class="section-description">מגוון רחב של אפשרויות השקעה חכמות בנכסים אמיתיים - ממתקני ספורט בישראל ועד נדל"ן בחו"ל</p>
+            </div>
+            
+            <div class="investments-grid">
+                <div class="investment-card">
+                    <div class="investment-badge">🏆 פרויקט ייחודי</div>
+                    <div class="investment-icon icon-green">⚽</div>
+                    <h3>מתקני ספורט בישראל</h3>
+                    <p>השקעה בפרויקטים של הקמת מתקני ספורט מתקדמים ברחבי ישראל. חברתנו מתמחה בגיוס כספים לפרויקטים איכותיים עם פוטנציאל תשואה גבוה והשפעה חברתית חיובית.</p>
+                    <div class="investment-features">
+                        <h4>יתרונות ההשקעה:</h4>
+                        <ul>
+                            <li><span class="checkmark checkmark-green">✓</span> נכס מוחשי בישראל</li>
+                            <li><span class="checkmark checkmark-green">✓</span> ביקוש גבוה למתקני ספורט</li>
+                            <li><span class="checkmark checkmark-green">✓</span> תשואה יציבה לטווח ארוך</li>
+                            <li><span class="checkmark checkmark-green">✓</span> תרומה לקהילה ולחברה</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
+                </div>
+
+                <div class="investment-card">
+                    <div class="investment-badge">🌍 השקעה בינלאומית</div>
+                    <div class="investment-icon icon-blue">🏢</div>
+                    <h3>נדל"ן בארה"ב</h3>
+                    <p>השקעות בפרויקטי נדל"ן מובחרים בארצות הברית. נכסים איכותיים בשווקים צומחים עם פוטנציאל לתשואה אטרקטיבית ופיזור גיאוגרפי חכם של התיק.</p>
+                    <div class="investment-features">
+                        <h4>יתרונות ההשקעה:</h4>
+                        <ul>
+                            <li><span class="checkmark checkmark-blue">✓</span> גיוון גיאוגרפי - דולר</li>
+                            <li><span class="checkmark checkmark-blue">✓</span> שוק נדל"ן מפותח ויציב</li>
+                            <li><span class="checkmark checkmark-blue">✓</span> פרויקטים מבוססים ומנוהלים</li>
+                            <li><span class="checkmark checkmark-blue">✓</span> הגנה מפני אינפלציה</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
+                </div>
+
+                <div class="investment-card">
+                    <div class="investment-badge">🇪🇺 השקעה אירופאית</div>
+                    <div class="investment-icon icon-purple">🏰</div>
+                    <h3>נדל"ן באירופה</h3>
+                    <p>השקעות בנדל"ן איכותי במדינות אירופה מובילות. פרויקטים בשווקים מרכזיים עם יציבות כלכלית גבוהה ופוטנציאל צמיחה ארוך טווח.</p>
+                    <div class="investment-features">
+                        <h4>יתרונות ההשקעה:</h4>
+                        <ul>
+                            <li><span class="checkmark checkmark-purple">✓</span> פיזור גיאוגרפי - יורו</li>
+                            <li><span class="checkmark checkmark-purple">✓</span> נכסים באזורים מבוקשים</li>
+                            <li><span class="checkmark checkmark-purple">✓</span> שווקים מפותחים ומוסדרים</li>
+                            <li><span class="checkmark checkmark-purple">✓</span> תשואה יציבה לאורך זמן</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
+                </div>
+            </div>
+
+            <div class="investment-cta">
+                <h3>מעוניינים בהזדמנויות השקעה ייחודיות?</h3>
+                <p>צרו קשר לקבלת פרטים מלאים על ההשקעות האלטרנטיביות שלנו - נשמח לענות על כל שאלה ולהציג את הפרויקטים בפירוט</p>
+                <a href="#contact" class="btn">פנה אלינו עכשיו</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing fade-in-section" id="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">מחירון</span>
+                <h2 class="section-title">חבילות שירות גמישות</h2>
+                <p class="section-description">בחרו את החבילה המתאימה לצרכים שלכם - כולן כוללות ייעוץ מקצועי ואישי</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-badge">עצמאיים</div>
+                    <h3>חבילת יסוד</h3>
+                    <div class="price">
+                        <span class="price-currency">₪</span>1,800
+                        <span class="price-period">/שנה</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>ייעוץ מיסוי בסיסי</li>
+                        <li>תכנון מס אופטימלי</li>
+                        <li>בדיקת זכויות לניכויים</li>
+                        <li>תמיכה טלפונית</li>
+                        <li>מענה תוך 48 שעות</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">פנה עכשיו</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">מומלץ</div>
+                    <h3>תכנון מקיף</h3>
+                    <div class="price">
+                        <span class="price-currency">₪</span>4,500
+                        <span class="price-period">/שנה</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>כל שירותי חבילת היסוד</li>
+                        <li>תכנון פיננסי אישי מלא</li>
+                        <li>בדיקת זכויות פנסיוניות</li>
+                        <li>ייעוץ ביטוחי</li>
+                        <li>פגישות אישיות רבעוניות</li>
+                        <li>זמינות מלאה בוואטסאפ</li>
+                        <li>תכנון מס מתקדם</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">התחל עכשיו</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-badge">VIP</div>
+                    <h3>ליווי פרימיום</h3>
+                    <div class="price">
+                        <span class="price-currency">₪</span>8,000
+                        <span class="price-period">/שנה</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>כל שירותי החבילה המקיפה</li>
+                        <li>ליווי צמוד לאורך השנה</li>
+                        <li>פגישות חודשיות</li>
+                        <li>תכנון פרישה מותאם אישית</li>
+                        <li>ניהול תיק השקעות</li>
+                        <li>אופטימיזציה מתמשכת</li>
+                        <li>עדיפות ראשונה</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">צור קשר</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in-section" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <span class="section-tag">צור קשר</span>
+                <h2 class="section-title">בואו נדבר</h2>
+                <p class="section-description">מלאו את הפרטים ונחזור אליכם בהקדם האפשרי</p>
+            </div>
+            <div class="contact-form">
+                <div class="success-message" id="successMessage">
+                    ההודעה נשלחה בהצלחה! נחזור אליך בהקדם.
+                </div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">שם מלא *</label>
+                        <input type="text" id="name" name="name" required placeholder="הכנס את שמך המלא">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">אימייל *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">טלפון</label>
+                        <input type="tel" id="phone" name="phone" placeholder="050-1234567">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">סוג השירות *</label>
+                        <select id="service" name="service" required>
+                            <option value="">בחר שירות</option>
+                            <option value="tax">ייעוץ מס</option>
+                            <option value="financial-planning">תכנון פיננסי</option>
+                            <option value="pension">תכנון פנסיוני ופרישה</option>
+                            <option value="insurance">ייעוץ ביטוחי</option>
+                            <option value="ongoing">ליווי שוטף</option>
+                            <option value="early-retirement">תכנון פרישה מוקדמת</option>
+                            <option value="sports-facilities">השקעה במתקני ספורט</option>
+                            <option value="usa-real-estate">נדל"ן בארה"ב</option>
+                            <option value="europe-real-estate">נדל"ן באירופה</option>
+                            <option value="comprehensive">ייעוץ מקיף</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">הודעה *</label>
+                        <textarea id="message" name="message" required placeholder="ספר לנו קצת על הצרכים שלך..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">שלח הודעה</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-item-icon">📞</div>
+                    <h4>טלפון</h4>
+                    <p>052-828-5956</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">✉️</div>
+                    <h4>אימייל</h4>
+                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7312051a001b121a331e1c01121d5e151a1d5d101c1e">[email&#160;protected]</a></p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <h4>כתובת</h4>
+                    <p>רחוב סירקין 15</p>
+                    <p>חיפה, ישראל</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">ויזל מיסוי ותכנון פיננסי</div>
+            <p class="footer-text">מומחיות במיסוי ותכנון פיננסי עם 8.5 שנות ניסיון ברשות המיסים</p>
+            <ul class="footer-links">
+                <li><a href="#home">דף הבית</a></li>
+                <li><a href="#services">שירותים</a></li>
+                <li><a href="#investments">השקעות</a></li>
+                <li><a href="#pricing">מחירון</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+            <div class="footer-divider"></div>
+            <p class="footer-bottom">© 2024 ויזל מיסוי ותכנון פיננסי. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll animations
+        const fadeInSections = document.querySelectorAll('.fade-in-section');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeInSections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show success message
+            successMessage.style.display = 'block';
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offs
