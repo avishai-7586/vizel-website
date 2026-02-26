@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>אבישי ויזל - כרטיס ביקור דיגיטלי</title>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Heebo:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            background: linear-gradient(135deg, #1a2947 0%, #2d4263 100%);
+            min-height: 100%;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a2947 0%, #2d4263 100%);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Heebo', sans-serif;
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #c9a961;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(201, 169, 97, 0.5);
+        }
+
+        .tagline {
+            color: white;
+            font-size: 1.2em;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .body {
+            padding: 30px 20px;
+        }
+
+        .name {
+            font-family: 'Heebo', sans-serif;
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #1a2947;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #c9a961;
+            font-weight: 700;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a961, transparent);
+            margin: 25px 0;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tag {
+            background: #f5f5f5;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #1a2947;
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #c9a961, #b89550);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            margin-left: 12px;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .label {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 3px;
+        }
+
+        .value {
+            font-weight: 700;
+            color: #1a2947;
+            font-size: 1.05em;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-call {
+            background: #1a2947;
+            color: white;
+        }
+
+        .btn-email {
+            background: #c9a961;
+            color: white;
+            grid-column: 1 / -1;
+        }
+
+        .btn-save {
+            background: #f0f0f0;
+            color: #1a2947;
+            grid-column: 1 / -1;
+            border: 2px solid #ddd;
+        }
+
+        .website {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .website a {
+            color: #c9a961;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 2em;
+            }
+            .name {
+                font-size: 1.8em;
+            }
+            .tagline {
+                font-size: 1.1em;
+            }
+            .tag {
+                font-size: 0.85em;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <div class="logo">ויזל</div>
+            <div class="tagline">תכנון מס <span class="arrow">→</span> שלוקח אותך קדימה</div>
+        </div>
+        
+        <div class="body">
+            <h1 class="name">אבישי ויזל</h1>
+            <p class="subtitle"><span class="highlight">8 שנות ניסיון</span> ברשות המיסים</p>
+            <p class="subtitle">מתכנן פיננסי מוסמך | סוכן ביטוח מורשה</p>
+            
+            <div class="divider"></div>
+            
+            <div class="services">
+                <span class="tag">💼 תכנון פיננסי</span>
+                <span class="tag">📋 ייעוץ מס</span>
+                <span class="tag">🏦 תכנון פנסיוני</span>
+                <span class="tag">🎯 תכנון פרישה</span>
+                <span class="tag">🛡️ ביטוח</span>
+                <span class="tag">📊 השקעות</span>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <a href="tel:+972528285956" class="contact-item">
+                <div class="icon">📞</div>
+                <div class="details">
+                    <div class="label">טלפון</div>
+                    <div class="value">052-828-5956</div>
+                </div>
+            </a>
+            
+            <a href="mailto:avishai@moran-fin.com" class="contact-item">
+                <div class="icon">✉️</div>
+                <div class="details">
+                    <div class="label">אימייל</div>
+                    <div class="value">avishai@moran-fin.com</div>
+                </div>
+            </a>
+            
+            <div class="contact-item">
+                <div class="icon">📍</div>
+                <div class="details">
+                    <div class="label">כתובת</div>
+                    <div class="value">רחוב סירקין 15, חיפה</div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <a href="https://wa.me/972528285956?text=שלום%20אבישי,%20אשמח%20לקבל%20פרטים%20נוספים" class="btn btn-whatsapp" target="_blank">
+                    💬 WhatsApp
+                </a>
+                <a href="tel:+972528285956" class="btn btn-call">
+                    📞 התקשר
+                </a>
+                <a href="mailto:avishai@moran-fin.com?subject=פנייה%20מכרטיס%20הביקור" class="btn btn-email">
+                    ✉️ שלח מייל
+                </a>
+                <button onclick="saveContact()" class="btn btn-save">
+                    💾 שמור בטלפון
+                </button>
+            </div>
+            
+            <div class="website">
+                <a href="http://www.vizelconsulting.com" target="_blank">
+                    🌐 בקר באתר שלנו
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function saveContact() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:אבישי ויזל
+N:ויזל;אבישי;;;
+ORG:ויזל - תכנון מס שלוקח אותך קדימה
+TITLE:מתכנן פיננסי ויועץ מס
+TEL;TYPE=CELL:+972528285956
+EMAIL:avishai@moran-fin.com
+ADR;TYPE=WORK:;;רחוב סירקין 15;חיפה;;;ישראל
+URL:http://www.vizelconsulting.com
+NOTE:8 שנות ניסיון ברשות המיסים | תכנון פיננסי | ייעוץ מס | תכנון פנסיוני | תכנון פרישה | ביטוח | השקעות
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'אבישי_ויזל.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
