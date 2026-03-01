@@ -1301,25 +1301,9 @@
 
         // Contact form handling
         const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
+       
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Show success message
-            successMessage.style.display = 'block';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 5000);
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        });
+
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
