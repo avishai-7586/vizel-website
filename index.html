@@ -1173,7 +1173,7 @@
                 <div class="success-message" id="successMessage">
                     ההודעה נשלחה בהצלחה! נחזור אליך בהקדם.
                 </div>
-                <form id="contactForm">
+                <form id="contactForm">action="https://formsubmit.co/avishai@moran-fin.com" method="POST"
                     <div class="form-group">
                         <label for="name">שם מלא *</label>
                         <input type="text" id="name" name="name" required placeholder="הכנס את שמך המלא">
@@ -1207,6 +1207,10 @@
                         <textarea id="message" name="message" required placeholder="ספר לנו קצת על הצרכים שלך..."></textarea>
                     </div>
                     <button type="submit" class="form-submit">שלח הודעה</button>
+                    <!-- FormSubmit Settings -->
+                    <input type="hidden" name="_subject" value="פנייה חדשה מהאתר - ויזל ייעוץ">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                 </form>
             </div>
             <div class="contact-info">
