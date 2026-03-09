@@ -1053,6 +1053,126 @@
 .btn-client-area::after {
     display: none;
 }
+
+        /* Questionnaire Section */
+.questionnaire {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.questionnaire-form {
+    max-width: 800px;
+    margin: 60px auto 0;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 35px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #1e3a5f;
+    margin-bottom: 12px;
+    font-size: 1.05em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #d4af37;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.radio-label:hover,
+.checkbox-label:hover {
+    background: #e9ecef;
+}
+
+.radio-label input,
+.checkbox-label input {
+    margin-left: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.radio-label span,
+.checkbox-label span {
+    flex: 1;
+}
+
+.subsection-title {
+    font-size: 1.2em;
+    color: #1e3a5f;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #d4af37;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-large {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.1em;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .questionnaire-form {
+        padding: 30px 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -1068,6 +1188,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">דף הבית</a></li>
                 <li><a href="#about">אודות</a></li>
+                <li><a href="#questionnaire">שאלון</a></li>
                 <li><a href="#services">שירותים</a></li>
                 <li><a href="#investments">השקעות</a></li>
                 <li><a href="#pricing">מחירון</a></li>
@@ -1303,6 +1424,154 @@
         </div>
     </section>
 
+
+    <!-- Questionnaire Section -->
+<section class="questionnaire" id="questionnaire">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">אפיון צרכים</span>
+            <h2 class="section-title">שאלון אפיון צרכים אישי</h2>
+            <p class="section-description">השאלון יעזור לי להבין את הצרכים שלך ולהציע לך את הפתרון המתאים ביותר</p>
+        </div>
+        
+        <div class="questionnaire-form">
+            <form id="questionnaireForm" action="https://formspree.io/f/mlgwyrgp" method="POST">
+                <input type="hidden" name="_subject" value="שאלון אפיון צרכים חדש">
+                
+                <!-- Question 1: Age -->
+                <div class="form-group">
+                    <label for="age">1. מה הגיל שלך? *</label>
+                    <input type="number" id="age" name="age" required min="18" max="120" placeholder="הכנס גיל">
+                </div>
+                
+                <!-- Question 2: Tax Planning -->
+                <div class="form-group">
+                    <label>2. האם ב-3 השנים האחרונות ביצעת תכנון מס? *</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="tax_planning" value="כן" required>
+                            <span>כן</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="tax_planning" value="לא" required>
+                            <span>לא</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Question 3: Employment Status -->
+                <div class="form-group">
+                    <label for="employment">3. סטטוס תעסוקתי *</label>
+                    <select id="employment" name="employment" required>
+                        <option value="">בחר סטטוס</option>
+                        <option value="שכיר">שכיר</option>
+                        <option value="עצמאי">עצמאי</option>
+                        <option value="בעל עסק">בעל עסק</option>
+                        <option value="פנסיונר">פנסיונר</option>
+                        <option value="אחר">אחר</option>
+                    </select>
+                </div>
+                
+                <!-- Question 4: Capital Efficiency -->
+                <div class="form-group">
+                    <label>4. יעילות ההון - האם הכסף שלך מניב עבורך תשואה מספקת? *</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="capital_efficiency" value="כן, מרוצה מהתשואה" required>
+                            <span>כן, מרוצה מהתשואה</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="capital_efficiency" value="לא, התשואה לא מספקת" required>
+                            <span>לא, התשואה לא מספקת</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="capital_efficiency" value="לא בטוח" required>
+                            <span>לא בטוח</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Question 5: Pension Savings -->
+                <div class="form-group">
+                    <label for="pension">5. מה גובה הצבירה במוצרים הפנסיוניים? (בש״ח) *</label>
+                    <select id="pension" name="pension" required>
+                        <option value="">בחר טווח</option>
+                        <option value="0-100,000">0 - 100,000 ₪</option>
+                        <option value="100,000-500,000">100,000 - 500,000 ₪</option>
+                        <option value="500,000-1,000,000">500,000 - 1,000,000 ₪</option>
+                        <option value="1,000,000-2,000,000">1,000,000 - 2,000,000 ₪</option>
+                        <option value="2,000,000+">מעל 2,000,000 ₪</option>
+                    </select>
+                </div>
+                
+                <!-- Question 6: Financial Savings -->
+                <div class="form-group">
+                    <label for="financial">6. מה גובה הצבירה במוצרים הפיננסיים? (בש״ח) *</label>
+                    <select id="financial" name="financial" required>
+                        <option value="">בחר טווח</option>
+                        <option value="0-50,000">0 - 50,000 ₪</option>
+                        <option value="50,000-200,000">50,000 - 200,000 ₪</option>
+                        <option value="200,000-500,000">200,000 - 500,000 ₪</option>
+                        <option value="500,000-1,000,000">500,000 - 1,000,000 ₪</option>
+                        <option value="1,000,000+">מעל 1,000,000 ₪</option>
+                    </select>
+                </div>
+                
+                <!-- Question 7: Investment Preferences -->
+                <div class="form-group">
+                    <label>7. העדפות השקעה (ניתן לבחור יותר מאפשרות אחת) *</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="שיפור תשואות">
+                            <span>אפשרויות לשיפור תשואות</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="חיסכון במיסוי ודמי ניהול">
+                            <span>חיסכון במיסוי ודמי ניהול</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="ייעוץ מקיף">
+                            <span>ייעוץ מקיף לכל הנכסים שברשותי</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="preferences" value="שילוב של כל הגורמים">
+                            <span>שילוב של כל הגורמים יחד</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Question 8: Contact Details -->
+                <div class="form-group">
+                    <h3 class="subsection-title">8. פרטים מלאים ליצירת קשר</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="q_name">שם מלא *</label>
+                            <input type="text" id="q_name" name="name" required placeholder="שם מלא">
+                        </div>
+                        <div class="form-col">
+                            <label for="q_phone">טלפון *</label>
+                            <input type="tel" id="q_phone" name="phone" required placeholder="05X-XXX-XXXX">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="q_email">אימייל *</label>
+                            <input type="email" id="q_email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-col">
+                            <label for="q_city">עיר מגורים</label>
+                            <input type="text" id="q_city" name="city" placeholder="עיר">
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-large">שלח שאלון</button>
+            </form>
+        </div>
+    </div>
+</section>
     <!-- Contact Section -->
     <section class="contact fade-in-section" id="contact">
         <div class="contact-container">
