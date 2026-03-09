@@ -30,16 +30,16 @@
         }
 
         :root {
-            --primary: #1a2947;
-            --primary-light: #2d4263;
-            --accent: #c9a961;
-            --accent-dark: #b89550;
-            --text-dark: #1a1a1a;
-            --text-light: #666;
-            --bg-cream: #faf8f5;
-            --white: #ffffff;
-            --shadow: rgba(26, 41, 71, 0.08);
-            --shadow-lg: rgba(26, 41, 71, 0.15);
+--primary: #1e3a5f;
+        --primary-light: #2d4a6e;
+        --accent: #d4af37;
+        --accent-dark: #c19a2e;
+        --text-dark: #1a1a1a;
+        --text-light: #666;
+        --bg-cream: #f8f9fa;
+        --white: #ffffff;
+        --shadow: rgba(30, 58, 95, 0.08);
+        --shadow-lg: rgba(30, 58, 95, 0.15);
         }
 
         body {
@@ -959,6 +959,100 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* About Section */
+.about {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    border: 8px solid #d4af37;
+}
+
+.about-text {
+    padding: 20px;
+}
+
+.about-subtitle {
+    font-size: 1.5em;
+    color: #1e3a5f;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.about-details {
+    line-height: 1.8;
+    color: #444;
+}
+
+.about-details p {
+    margin-bottom: 20px;
+}
+
+.about-details strong {
+    color: #1e3a5f;
+    font-weight: 700;
+}
+
+.about-details em {
+    color: #d4af37;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.about-cta {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+        /* Client Area Button */
+.btn-client-area {
+    background: linear-gradient(135deg, #d4af37 0%, #c19a2e 100%);
+    color: #ffffff !important;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-client-area:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.btn-client-area::after {
+    display: none;
+}
     </style>
 </head>
 <body>
@@ -973,10 +1067,12 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">דף הבית</a></li>
+                <li><a href="#about">אודות</a></li>
                 <li><a href="#services">שירותים</a></li>
                 <li><a href="#investments">השקעות</a></li>
                 <li><a href="#pricing">מחירון</a></li>
                 <li><a href="#contact">צור קשר</a></li>
+                <li><a href="https://portal.roeto.co.il/avishayvizel1986/" target="_blank" class="btn-client-area">אזור אישי</a></li>
             </ul>
         </div>
     </nav>
@@ -996,6 +1092,38 @@
             </div>
         </div>
     </section>
+    <!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="avihai-photo-professional.png" alt="אבישי ויזל - יועץ מס ומתכנן פיננסי">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title">אודות</h2>
+                <h3 class="about-subtitle">אבישי ויזל - מומחה מס ותכנון פיננסי</h3>
+                
+                <div class="about-details">
+                    <p><strong>רקע מקצועי:</strong></p>
+                    <p>8 שנות ניסיון במע"מ חיפה, במהלכן ניהלתי את מחלקת קבלת הקהל ומחלקת הגבייה והאכיפה. ההתמחות שלי היא בעולם המס, ובעיקר בייעוץ לבעלי עסקים וחברות.</p>
+                    
+                    <p><strong>מה מייחד אותי:</strong></p>
+                    <p>הידע והניסיון שצברתי ברשות המיסים, יחד עם רישיון פנסיוני, מאפשרים לי להבין את המצב המלא ולבצע מיטוב במקומות שבעלי רישיון אחרים לא יכולים לגעת בהם.</p>
+                    
+                    <p><strong>הערך המרכזי:</strong></p>
+                    <p>אמינות ויושרה. תמיד אני אומר: <em>"טוב לך, טוב לי"</em> - כי הצלחה משותפת היא הבסיס לשותפות ארוכת טווח.</p>
+                    
+                    <p><strong>קצת עליי:</strong></p>
+                    <p>נשוי + 3 ילדים, אוהב ספורט ומאמין שכל אחד ואחת יכולים להגשים את עצמם באמצעים העומדים לרשותם - הכל שאלה של תכנון נכון וביצוע בפועל.</p>
+                </div>
+                
+                <div class="about-cta">
+                    <a href="#contact" class="btn btn-primary">בואו נתכנן ביחד</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section class="services fade-in-section" id="services">
@@ -1007,32 +1135,32 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">📋</div>
+                    <div class="service-icon"></div>
                     <h3>ייעוץ מס</h3>
                     <p>ייעוץ מקצועי במיסוי לעצמאיים ולחברות. תכנון מס אופטימלי, ניצול מלא של כל הזכויות והפטורים המגיעים לכם. ניסיון של 8 שנים ברשות המיסים - אני מכיר את המערכת מבפנים.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💰</div>
+                    <div class="service-icon"></div>
                     <h3>תכנון פיננסי</h3>
                     <p>בניית תכנית פיננסית מקיפה המותאמת למטרות ולמצב האישי שלכם. ניהול תקציב, תכנון השקעות, והכנה לאירועי חיים משמעותיים - חתונה, רכישת דירה, לימודי ילדים ועוד.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🏦</div>
+                    <div class="service-icon"></div>
                     <h3>תכנון פנסיוני</h3>
                     <p>הכנה מקיפה לפרישה - בדיקת זכויות פנסיוניות, אופטימיזציה של קרנות פנסיה וקופות גמל, תכנון הכנסה לגיל פרישה, וייעוץ לגבי מועד הפרישה האופטימלי.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🛡️</div>
+                    <div class="service-icon"></div>
                     <h3>ביטוח וניהול סיכונים</h3>
                     <p>כסוכן ביטוח מורשה, אני מספק ייעוץ מקצועי לבחירת פוליסות ביטוח מתאימות - ביטוח חיים, אובדן כושר עבודה, בריאות ופנסיה. הגנה מלאה על העתיד שלכם ושל המשפחה.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
+                    <div class="service-icon"></div>
                     <h3>ליווי שוטף</h3>
                     <p>ליווי רציף ועדכון שוטף של התכנית הפיננסית בהתאם לשינויים בחיים ובשוק. מעקב אחר השקעות, עדכון תכנון מס, והתאמת אסטרטגיה פיננסית לצרכים המשתנים.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🎯</div>
+                    <div class="service-icon"></div>
                     <h3>תכנון פרישה מוקדמת</h3>
                     <p>ייעוץ מיוחד לאנשים המעוניינים לפרוש מוקדם - חישוב כדאיות, תכנון הכנסות חלופיות, אופטימיזציה מיסויית של הפרישה, והכנה כלכלית מלאה לשלב החדש בחיים.</p>
                 </div>
@@ -1051,8 +1179,8 @@
             
             <div class="investments-grid">
                 <div class="investment-card">
-                    <div class="investment-badge">🏆 פרויקט ייחודי</div>
-                    <div class="investment-icon icon-green">⚽</div>
+                    <div class="investment-badge"> פרויקט ייחודי</div>
+                    <div class="investment-icon icon-green"></div>
                     <h3>מתקני ספורט בישראל</h3>
                     <p>השקעה בפרויקטים של הקמת מתקני ספורט מתקדמים ברחבי ישראל. חברתנו מתמחה בגיוס כספים לפרויקטים איכותיים עם פוטנציאל תשואה גבוה והשפעה חברתית חיובית.</p>
                     <div class="investment-features">
@@ -1068,7 +1196,7 @@
                 </div>
 
                 <div class="investment-card">
-                    <div class="investment-badge">🌍 השקעה בינלאומית</div>
+                    <div class="investment-badge"> השקעה בינלאומית</div>
                     <div class="investment-icon icon-blue">🏢</div>
                     <h3>נדל"ן בארה"ב</h3>
                     <p>השקעות בפרויקטי נדל"ן מובחרים בארצות הברית. נכסים איכותיים בשווקים צומחים עם פוטנציאל לתשואה אטרקטיבית ופיזור גיאוגרפי חכם של התיק.</p>
@@ -1086,7 +1214,7 @@
 
                 <div class="investment-card">
                     <div class="investment-badge">🇪🇺 השקעה אירופאית</div>
-                    <div class="investment-icon icon-purple">🏰</div>
+                    <div class="investment-icon icon-purple"></div>
                     <h3>נדל"ן באירופה</h3>
                     <p>השקעות בנדל"ן איכותי במדינות אירופה מובילות. פרויקטים בשווקים מרכזיים עם יציבות כלכלית גבוהה ופוטנציאל צמיחה ארוך טווח.</p>
                     <div class="investment-features">
