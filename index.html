@@ -639,6 +639,18 @@
             border-bottom-color: rgba(255, 255, 255, 0.1);
         }
 
+        .feature-new {
+            color: var(--accent-dark) !important;
+            font-weight: 700 !important;
+        }
+        .feature-missing {
+            color: #ccc !important;
+            text-decoration: line-through;
+        }
+        .feature-missing::before {
+            content: "✗ " !important;
+            color: #ccc !important;
+        }
         .pricing-features li:last-child {
             border-bottom: none;
         }
@@ -1171,7 +1183,7 @@
                 <li><a href="#services">המומחיות שלי</a></li>
                 <li><a href="#investments">השקעות</a></li>
                 <li><a href="#pricing">מחירון</a></li>
-                <li><a href="#contact">צור קשר</a></li>
+                <li><a href="#questionnaire">צור קשר</a></li>
                 <li><a href="https://portal.roeto.co.il/avishayvizel1986/" target="_blank" class="btn-client-area">אזור אישי</a></li>
             </ul>
         </div>
@@ -1185,7 +1197,7 @@
                 <h1>מומחה מס<br>ותכנון פיננסי</h1>
                 <p class="hero-subtitle">עם 8 שנות ניסיון ברשות המיסים ורישיון סוכן ביטוח, אני מספק פתרונות מיסוי ותכנון פיננסי מקיפים שיחסכו לכם כסף ויבטיחו עתיד כלכלי מאובטח.</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">פנה אלינו עכשיו</a>
+                    <a href="#questionnaire" class="btn btn-primary">פנה אלינו עכשיו</a>
                     <a href="#services" class="btn btn-secondary">למד עוד</a>
                 </div>
             </div>
@@ -1218,7 +1230,7 @@
                 </div>
                 
                 <div class="about-cta">
-                    <a href="#contact" class="btn btn-primary">בואו נתכנן ביחד</a>
+                    <a href="#questionnaire" class="btn btn-primary">בואו נתכנן ביחד</a>
                 </div>
             </div>
         </div>
@@ -1247,8 +1259,12 @@
                         <li>בדיקת זכויות לניכויים</li>
                         <li>תמיכה טלפונית</li>
                         <li>מענה תוך 48 שעות</li>
+                        <li class="feature-missing">תכנון פיננסי אישי</li>
+                        <li class="feature-missing">בדיקת זכויות פנסיוניות</li>
+                        <li class="feature-missing">פגישות אישיות</li>
+                        <li class="feature-missing">ליווי צמוד</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">פנה עכשיו</a>
+                    <a href="#questionnaire" class="btn btn-primary">פנה עכשיו</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="pricing-badge">מומלץ</div>
@@ -1258,15 +1274,17 @@
                         <span class="price-period">/שנה</span>
                     </div>
                     <ul class="pricing-features">
-                        <li>כל שירותי חבילת היסוד</li>
-                        <li>תכנון פיננסי אישי מלא</li>
-                        <li>בדיקת זכויות פנסיוניות</li>
-                        <li>ייעוץ ביטוחי</li>
-                        <li>פגישות אישיות רבעוניות</li>
-                        <li>זמינות מלאה בוואטסאפ</li>
-                        <li>תכנון מס מתקדם</li>
+                        <li>ייעוץ מיסוי בסיסי</li>
+                        <li>תכנון מס אופטימלי</li>
+                        <li>בדיקת זכויות לניכויים</li>
+                        <li>תמיכה טלפונית</li>
+                        <li>מענה תוך 48 שעות</li>
+                        <li class="feature-new">✦ תכנון פיננסי אישי מלא</li>
+                        <li class="feature-new">✦ בדיקת זכויות פנסיוניות</li>
+                        <li class="feature-new">✦ פגישות רבעוניות + וואטסאפ</li>
+                        <li class="feature-missing">ליווי צמוד</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">התחל עכשיו</a>
+                    <a href="#questionnaire" class="btn btn-primary">התחל עכשיו</a>
                 </div>
                 <div class="pricing-card">
                     <div class="pricing-badge">VIP</div>
@@ -1276,15 +1294,20 @@
                         <span class="price-period">/שנה</span>
                     </div>
                     <ul class="pricing-features">
-                        <li>כל שירותי החבילה המקיפה</li>
-                        <li>ליווי צמוד לאורך השנה</li>
-                        <li>פגישות חודשיות</li>
-                        <li>תכנון פרישה מותאם אישית</li>
-                        <li>ניהול תיק השקעות</li>
-                        <li>אופטימיזציה מתמשכת</li>
-                        <li>עדיפות ראשונה</li>
+                        <li>ייעוץ מיסוי בסיסי</li>
+                        <li>תכנון מס אופטימלי</li>
+                        <li>בדיקת זכויות לניכויים</li>
+                        <li>תמיכה טלפונית</li>
+                        <li>מענה תוך 48 שעות</li>
+                        <li>תכנון פיננסי אישי מלא</li>
+                        <li>בדיקת זכויות פנסיוניות</li>
+                        <li>פגישות רבעוניות + וואטסאפ</li>
+                        <li class="feature-new">✦ ליווי צמוד + פגישות חודשיות</li>
+                        <li class="feature-new">✦ תכנון פרישה מותאם אישית</li>
+                        <li class="feature-new">✦ ניהול תיק השקעות</li>
+                        <li class="feature-new">✦ עדיפות ראשונה</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">צור קשר</a>
+                    <a href="#questionnaire" class="btn btn-primary">צור קשר</a>
                 </div>
             </div>
         </div>
@@ -1299,32 +1322,26 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon"></div>
                     <h3>ייעוץ מס</h3>
                     <p>ייעוץ מקצועי במיסוי לעצמאיים ולחברות. תכנון מס אופטימלי, ניצול מלא של כל הזכויות והפטורים המגיעים לכם. ניסיון של 8 שנים ברשות המיסים - אני מכיר את המערכת מבפנים.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"></div>
                     <h3>תכנון פיננסי</h3>
                     <p>בניית תכנית פיננסית מקיפה המותאמת למטרות ולמצב האישי שלכם. ניהול תקציב, תכנון השקעות, והכנה לאירועי חיים משמעותיים - חתונה, רכישת דירה, לימודי ילדים ועוד.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"></div>
                     <h3>תכנון פנסיוני</h3>
                     <p>הכנה מקיפה לפרישה - בדיקת זכויות פנסיוניות, אופטימיזציה של קרנות פנסיה וקופות גמל, תכנון הכנסה לגיל פרישה, וייעוץ לגבי מועד הפרישה האופטימלי.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"></div>
                     <h3>ביטוח וניהול סיכונים</h3>
                     <p>כסוכן ביטוח מורשה, אני מספק ייעוץ מקצועי לבחירת פוליסות ביטוח מתאימות - ביטוח חיים, אובדן כושר עבודה, בריאות ופנסיה. הגנה מלאה על העתיד שלכם ושל המשפחה.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"></div>
                     <h3>ליווי שוטף</h3>
                     <p>ליווי רציף ועדכון שוטף של התכנית הפיננסית בהתאם לשינויים בחיים ובשוק. מעקב אחר השקעות, עדכון תכנון מס, והתאמת אסטרטגיה פיננסית לצרכים המשתנים.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon"></div>
                     <h3>תכנון פרישה מוקדמת</h3>
                     <p>ייעוץ מיוחד לאנשים המעוניינים לפרוש מוקדם - חישוב כדאיות, תכנון הכנסות חלופיות, אופטימיזציה מיסויית של הפרישה, והכנה כלכלית מלאה לשלב החדש בחיים.</p>
                 </div>
@@ -1344,7 +1361,6 @@
             <div class="investments-grid">
                 <div class="investment-card">
                     <div class="investment-badge"> פרויקט ייחודי</div>
-                    <div class="investment-icon icon-green"></div>
                     <h3>מתקני ספורט בישראל</h3>
                     <p>השקעה בפרויקטים של הקמת מתקני ספורט מתקדמים ברחבי ישראל. חברתנו מתמחה בגיוס כספים לפרויקטים איכותיים עם פוטנציאל תשואה גבוה והשפעה חברתית חיובית.</p>
                     <div class="investment-features">
@@ -1356,12 +1372,11 @@
                             <li><span class="checkmark checkmark-green">✓</span> תרומה לקהילה ולחברה</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
+                    <a href="#questionnaire" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
                 </div>
 
                 <div class="investment-card">
                     <div class="investment-badge"> השקעה בינלאומית</div>
-                    <div class="investment-icon icon-blue">🏢</div>
                     <h3>נדל"ן בארה"ב</h3>
                     <p>השקעות בפרויקטי נדל"ן מובחרים בארצות הברית. נכסים איכותיים בשווקים צומחים עם פוטנציאל לתשואה אטרקטיבית ופיזור גיאוגרפי חכם של התיק.</p>
                     <div class="investment-features">
@@ -1373,12 +1388,11 @@
                             <li><span class="checkmark checkmark-blue">✓</span> הגנה מפני אינפלציה</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
+                    <a href="#questionnaire" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
                 </div>
 
                 <div class="investment-card">
                     <div class="investment-badge">🇪🇺 השקעה אירופאית</div>
-                    <div class="investment-icon icon-purple"></div>
                     <h3>נדל"ן באירופה</h3>
                     <p>השקעות בנדל"ן איכותי במדינות אירופה מובילות. פרויקטים בשווקים מרכזיים עם יציבות כלכלית גבוהה ופוטנציאל צמיחה ארוך טווח.</p>
                     <div class="investment-features">
@@ -1390,14 +1404,14 @@
                             <li><span class="checkmark checkmark-purple">✓</span> תשואה יציבה לאורך זמן</li>
                         </ul>
                     </div>
-                    <a href="#contact" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
+                    <a href="#questionnaire" class="btn btn-primary" style="width: 100%; text-align: center;">קבל פרטים נוספים</a>
                 </div>
             </div>
 
             <div class="investment-cta">
                 <h3>מעוניינים בהזדמנויות השקעה ייחודיות?</h3>
                 <p>צרו קשר לקבלת פרטים מלאים על ההשקעות האלטרנטיביות שלנו - נשמח לענות על כל שאלה ולהציג את הפרויקטים בפירוט</p>
-                <a href="#contact" class="btn">פנה אלינו עכשיו</a>
+                <a href="#questionnaire" class="btn">פנה אלינו עכשיו</a>
             </div>
         </div>
     </section>
@@ -1553,7 +1567,6 @@
     </div>
 </section>
 
-
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -1564,14 +1577,14 @@
                 <li><a href="#services">שירותים</a></li>
                 <li><a href="#investments">השקעות</a></li>
                 <li><a href="#pricing">מחירון</a></li>
-                <li><a href="#contact">צור קשר</a></li>
+                <li><a href="#questionnaire">צור קשר</a></li>
             </ul>
             <div class="footer-divider"></div>
             <p class="footer-bottom">© 2024 ויזל מיסוי ותכנון פיננסי. כל הזכויות שמורות.</p>
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1680,12 +1693,4 @@
 </script>
 <!-- UserWay Accessibility Widget -->
 <script>
-(function(d){
-  var s = d.createElement("script");
-  s.setAttribute("data-account", "xGbuDDzarq");
-  s.setAttribute("src", "https://cdn.userway.org/widget.js");
-  (d.body || d.head).appendChild(s);
-})(document);
-</script>
-</body>
-</html>
+(
